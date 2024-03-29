@@ -1,6 +1,7 @@
 from coppeliasim_zmqremoteapi_client import RemoteAPIClient
 import os
 import math
+import time
 
 
 client = RemoteAPIClient()
@@ -69,6 +70,7 @@ sim.setObjectOrientation(body_handle, [math.radians(90), 0, -math.radians(90)], 
 sim.setObjectPosition(body_handle, [-0.06710752844810486, -0.3080650568008423, 1.4252123832702637], sim.handle_world)
 sim.setObjectAlias(body_handle, "body_dyn")
 set_object_dyn(body_handle)
+sim.computeMassAndInertia(body_handle, 1)
 
 print("Forme primitive pour wheels")
 
@@ -89,9 +91,10 @@ wrr_diameter = 0.524785
 wrr_thickness = 0.3437
 wrr_handle = sim.createPrimitiveShape(sim.primitiveshape_cylinder, [wrr_diameter, wrr_diameter, wrr_thickness], options)
 sim.setObjectOrientation(wrr_handle, [math.radians(23.746522210072314), math.radians(-90.46338811018134884), math.radians(0.7933965215763155)], sim.handle_world)
-sim.setObjectPosition(wrr_handle, [-1.0624862909317017, 1.164980173110962, 0.26345884799957275], sim.handle_world)
+sim.setObjectPosition(wrr_handle, [-1.0624862909317017, 1.164980173110962, 0.27345884799957275], sim.handle_world)
 sim.setObjectAlias(wrr_handle, "wrr_dyn")
 set_object_dyn(wrr_handle)
+sim.computeMassAndInertia(wrr_handle, 1)
 
 
 
@@ -112,9 +115,10 @@ wrl_diameter = 0.524785
 wrl_thickness = 0.3437
 wrl_handle = sim.createPrimitiveShape(sim.primitiveshape_cylinder, [wrl_diameter, wrl_diameter, wrl_thickness], options)
 sim.setObjectOrientation(wrl_handle, [math.radians(45.25791834482287), math.radians(-90.14023667813975074), math.radians(0.9081195167575136)], sim.handle_world)
-sim.setObjectPosition(wrl_handle, [1.0624865293502808, 1.164986491203308, 0.26424795389175415], sim.handle_world)
+sim.setObjectPosition(wrl_handle, [1.0624865293502808, 1.164986491203308, 0.27424795389175415], sim.handle_world)
 sim.setObjectAlias(wrl_handle, "wrl_dyn")
 set_object_dyn(wrl_handle)
+sim.computeMassAndInertia(wrl_handle, 1)
 
 
 
@@ -138,6 +142,7 @@ sim.setObjectOrientation(wfr_handle, [math.radians(23.746522210072314), math.rad
 sim.setObjectPosition(wfr_handle, [-1.0624862909317017, -1.0949854850769043, 0.26345860958099365], sim.handle_world)
 sim.setObjectAlias(wfr_handle, "wfr_dyn")
 set_object_dyn(wfr_handle)
+sim.computeMassAndInertia(wfr_handle, 1)
 
 
 
@@ -161,6 +166,7 @@ sim.setObjectOrientation(wfl_handle, [math.radians(23.746522210072314), math.rad
 sim.setObjectPosition(wfl_handle, [1.0624865293502808, -1.0949794054031372, 0.26424771547317505], sim.handle_world)
 sim.setObjectAlias(wfl_handle, "wfl_dyn")
 set_object_dyn(wfl_handle)
+sim.computeMassAndInertia(wfl_handle, 1)
 
 
 
@@ -184,6 +190,7 @@ sim.setObjectOrientation(wmr_handle, [math.radians(23.746522210072314), math.rad
 sim.setObjectPosition(wmr_handle, [-1.184484839439392, 0.09000296890735626, 0.2638533115386963], sim.handle_world)
 sim.setObjectAlias(wmr_handle, "wmr_dyn")
 set_object_dyn(wmr_handle)
+sim.computeMassAndInertia(wmr_handle, 1)
 
 
 
@@ -207,6 +214,7 @@ sim.setObjectOrientation(wml_handle, [math.radians(23.746522210072314), math.rad
 sim.setObjectPosition(wml_handle, [1.184484839439392, 0.09000296890735626, 0.2638533115386963], sim.handle_world)
 sim.setObjectAlias(wml_handle, "wml_dyn")
 set_object_dyn(wml_handle)
+sim.computeMassAndInertia(wml_handle, 1)
 
 
 # Création d'une articulation pivot horizontale : moteur de la roue arrière droite
@@ -216,7 +224,7 @@ print("Création d'une articulation pivot horizontale : moteur de la roue avant"
 options = 0
 sizes = [0.15, 0.02]
 wrr_motor_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
-sim.setObjectAlias(wrr_motor_handle, "front_motor")
+sim.setObjectAlias(wrr_motor_handle, "wrr_motor")
 sim.setObjectOrientation(wrr_motor_handle, [0, -math.pi/2.0, 0], wrr_motor_handle)
 position = sim.getObjectPosition(wrr_handle, sim.handle_world)
 sim.setObjectPosition(wrr_motor_handle, position, sim.handle_world)
@@ -228,7 +236,7 @@ print("Création d'une articulation pivot horizontale : moteur de la roue avant"
 options = 0
 sizes = [0.15, 0.02]
 wrl_motor_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
-sim.setObjectAlias(wrl_motor_handle, "front_motor")
+sim.setObjectAlias(wrl_motor_handle, "wrl_motor")
 sim.setObjectOrientation(wrl_motor_handle, [0, -math.pi/2.0, 0], wrl_motor_handle)
 position = sim.getObjectPosition(wrl_handle, sim.handle_world)
 sim.setObjectPosition(wrl_motor_handle, position, sim.handle_world)
@@ -240,7 +248,7 @@ print("Création d'une articulation pivot horizontale : moteur de la roue avant"
 options = 0
 sizes = [0.15, 0.02]
 wfr_motor_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
-sim.setObjectAlias(wfr_motor_handle, "front_motor")
+sim.setObjectAlias(wfr_motor_handle, "wfr_motor")
 sim.setObjectOrientation(wfr_motor_handle, [0, -math.pi/2.0, 0], wfr_motor_handle)
 position = sim.getObjectPosition(wfr_handle, sim.handle_world)
 sim.setObjectPosition(wfr_motor_handle, position, sim.handle_world)
@@ -252,7 +260,7 @@ print("Création d'une articulation pivot horizontale : moteur de la roue avant"
 options = 0
 sizes = [0.15, 0.02]
 wfl_motor_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
-sim.setObjectAlias(wfl_motor_handle, "front_motor")
+sim.setObjectAlias(wfl_motor_handle, "wfl_motor")
 sim.setObjectOrientation(wfl_motor_handle, [0, -math.pi/2.0, 0], wfl_motor_handle)
 position = sim.getObjectPosition(wfl_handle, sim.handle_world)
 sim.setObjectPosition(wfl_motor_handle, position, sim.handle_world)
@@ -264,7 +272,7 @@ print("Création d'une articulation pivot horizontale : moteur de la roue milieu
 options = 0
 sizes = [0.15, 0.02]
 wmr_motor_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
-sim.setObjectAlias(wmr_motor_handle, "front_motor")
+sim.setObjectAlias(wmr_motor_handle, "wmr_motor")
 sim.setObjectOrientation(wmr_motor_handle, [0, -math.pi/2.0, 0], wmr_motor_handle)
 position = sim.getObjectPosition(wmr_handle, sim.handle_world)
 sim.setObjectPosition(wmr_motor_handle, position, sim.handle_world)
@@ -276,7 +284,7 @@ print("Création d'une articulation pivot horizontale : moteur de la roue milieu
 options = 0
 sizes = [0.15, 0.02]
 wml_motor_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
-sim.setObjectAlias(wml_motor_handle, "front_motor")
+sim.setObjectAlias(wml_motor_handle, "wml_motor")
 sim.setObjectOrientation(wml_motor_handle, [0, -math.pi/2.0, 0], wml_motor_handle)
 position = sim.getObjectPosition(wml_handle, sim.handle_world)
 sim.setObjectPosition(wml_motor_handle, position, sim.handle_world)
@@ -334,3 +342,4 @@ sim.setObjectInt32Param(wfr_motor_handle,sim.objintparam_visibility_layer,0)
 sim.setObjectInt32Param(wfl_motor_handle,sim.objintparam_visibility_layer,0)
 sim.setObjectInt32Param(wmr_motor_handle,sim.objintparam_visibility_layer,0)
 sim.setObjectInt32Param(wml_motor_handle,sim.objintparam_visibility_layer,0)
+
