@@ -217,9 +217,196 @@ set_object_dyn(wml_handle)
 sim.computeMassAndInertia(wml_handle, 1)
 
 
+
+handle = sim.getObject("/SuspensionRearRight")
+position = sim.getObjectPosition(handle, sim.handle_world)
+print("position", position)
+eulerAngles = sim.getObjectOrientation(handle, sim.handle_world)
+for i in range(3):
+    eulerAngles[i] = math.degrees(eulerAngles[i])
+    print(i, eulerAngles[i])
+bbox = sim.getShapeBB(handle)
+print("bbox", bbox)
+
+# Créer une forme primitive de représentation dynamique du body
+
+options = 0
+srr_diameter = 0.434/2
+srr_thickness = 1.306514
+srr_handle = sim.createPrimitiveShape(sim.primitiveshape_cylinder, [srr_diameter, srr_diameter, srr_thickness], options)
+sim.setObjectOrientation(srr_handle, [math.radians(112.67314680986536), math.radians(0.9008132484742495), math.radians(151.81799298369745)], sim.handle_world)
+sim.setObjectPosition(srr_handle, [-0.9769465923309326, 0.6021621823310852, 0.596157431602478], sim.handle_world)
+sim.setObjectAlias(srr_handle, "srr_dyn")
+set_object_dyn(srr_handle)
+sim.computeMassAndInertia(srr_handle, 1)
+
+
+
+handle = sim.getObject("/SuspensionRearLeft")
+position = sim.getObjectPosition(handle, sim.handle_world)
+print("position", position)
+eulerAngles = sim.getObjectOrientation(handle, sim.handle_world)
+for i in range(3):
+    eulerAngles[i] = math.degrees(eulerAngles[i])
+    print(i, eulerAngles[i])
+bbox = sim.getShapeBB(handle)
+print("bbox", bbox)
+
+# Créer une forme primitive de représentation dynamique du body
+
+options = 0
+srl_diameter = 0.434/2
+srl_thickness = 1.306514
+srl_handle = sim.createPrimitiveShape(sim.primitiveshape_cylinder, [srl_diameter, srl_diameter, srl_thickness], options)
+sim.setObjectOrientation(srl_handle, [math.radians(112.67314680986536), math.radians(0.9008132484742495), math.radians(151.81799298369745)], sim.handle_world)
+sim.setObjectPosition(srl_handle, [0.9769465923309326, 0.6021621823310852, 0.596157431602478], sim.handle_world)
+sim.setObjectAlias(srl_handle, "srl_dyn")
+set_object_dyn(srl_handle)
+sim.computeMassAndInertia(srl_handle, 1)
+
+
+handle = sim.getObject("/SuspensionFrontRight")
+position = sim.getObjectPosition(handle, sim.handle_world)
+print("position", position)
+eulerAngles = sim.getObjectOrientation(handle, sim.handle_world)
+for i in range(3):
+    eulerAngles[i] = math.degrees(eulerAngles[i])
+    print(i, eulerAngles[i])
+bbox = sim.getShapeBB(handle)
+print("bbox", bbox)
+
+# Créer une forme primitive de représentation dynamique du body
+
+options = 0
+sfr_diameter = 0.389/2
+sfr_thickness = 1.821
+sfr_handle = sim.createPrimitiveShape(sim.primitiveshape_cylinder, [sfr_diameter, sfr_diameter, sfr_thickness], options)
+sim.setObjectOrientation(sfr_handle, [math.radians(-92.39560379813177), math.radians(7.605833825459014), math.radians(-169.4107417321115)], sim.handle_world)
+sim.setObjectPosition(sfr_handle, [-0.8669474720954895, -0.2909966707229614, 0.802253782749176], sim.handle_world)
+sim.setObjectAlias(sfr_handle, "sfr_dyn")
+set_object_dyn(sfr_handle)
+sim.computeMassAndInertia(sfr_handle, 1)
+
+
+handle = sim.getObject("/SuspensionFrontLeft")
+position = sim.getObjectPosition(handle, sim.handle_world)
+print("position", position)
+eulerAngles = sim.getObjectOrientation(handle, sim.handle_world)
+for i in range(3):
+    eulerAngles[i] = math.degrees(eulerAngles[i])
+    print(i, eulerAngles[i])
+bbox = sim.getShapeBB(handle)
+print("bbox", bbox)
+
+# Créer une forme primitive de représentation dynamique du body
+
+options = 0
+sfl_diameter = 0.389/2
+sfl_thickness = 1.821
+sfl_handle = sim.createPrimitiveShape(sim.primitiveshape_cylinder, [sfl_diameter, sfl_diameter, sfl_thickness], options)
+sim.setObjectOrientation(sfl_handle, [math.radians(87.60438482676204), math.radians(7.605747404266133), math.radians(10.589331500171427)], sim.handle_world)
+sim.setObjectPosition(sfl_handle, [0.8669472932815552, -0.2909965515136719, 0.802253782749176], sim.handle_world)
+sim.setObjectAlias(sfl_handle, "sfl_dyn")
+set_object_dyn(sfl_handle)
+sim.computeMassAndInertia(sfl_handle, 1)
+
+
+handle = sim.getObject("/WheelAttachRearRight")
+position = sim.getObjectPosition(handle, sim.handle_world)
+print("position", position)
+eulerAngles = sim.getObjectOrientation(handle, sim.handle_world)
+for i in range(3):
+    eulerAngles[i] = math.degrees(eulerAngles[i])
+    print(i, eulerAngles[i])
+bbox = sim.getShapeBB(handle)
+print("bbox", bbox)
+
+# Créer une forme primitive de représentation dynamique du body
+
+options = 0
+warr_diameter = 0.1
+warr_thickness = 0.3437/2
+warr_handle = sim.createPrimitiveShape(sim.primitiveshape_cylinder, [warr_diameter, warr_diameter, warr_thickness], options)
+sim.setObjectOrientation(warr_handle, [math.radians(0), math.radians(-0.46338811018134884), math.radians(0.7933965215763155)], sim.handle_world)
+sim.setObjectPosition(warr_handle, [-1.0624862909317017, 1.164980173110962, 0.67345884799957275], sim.handle_world)
+sim.setObjectAlias(warr_handle, "warr_dyn")
+set_object_dyn(warr_handle)
+sim.computeMassAndInertia(warr_handle, 1)
+
+
+handle = sim.getObject("/WheelAttachRearLeft")
+position = sim.getObjectPosition(handle, sim.handle_world)
+print("position", position)
+eulerAngles = sim.getObjectOrientation(handle, sim.handle_world)
+for i in range(3):
+    eulerAngles[i] = math.degrees(eulerAngles[i])
+    print(i, eulerAngles[i])
+bbox = sim.getShapeBB(handle)
+print("bbox", bbox)
+
+# Créer une forme primitive de représentation dynamique du body
+
+options = 0
+walr_diameter = 0.1
+walr_thickness = 0.3437/2
+warl_handle = sim.createPrimitiveShape(sim.primitiveshape_cylinder, [walr_diameter, walr_diameter, walr_thickness], options)
+sim.setObjectOrientation(warl_handle, [math.radians(0), math.radians(-0.46338811018134884), math.radians(0.7933965215763155)], sim.handle_world)
+sim.setObjectPosition(warl_handle, [1.0624865293502808, 1.164986491203308, 0.67345860958099365], sim.handle_world)
+sim.setObjectAlias(warl_handle, "walr_dyn")
+set_object_dyn(warl_handle)
+sim.computeMassAndInertia(warl_handle, 1)
+
+
+handle = sim.getObject("/WheelAttachFrontRight")
+position = sim.getObjectPosition(handle, sim.handle_world)
+print("position", position)
+eulerAngles = sim.getObjectOrientation(handle, sim.handle_world)
+for i in range(3):
+    eulerAngles[i] = math.degrees(eulerAngles[i])
+    print(i, eulerAngles[i])
+bbox = sim.getShapeBB(handle)
+print("bbox", bbox)
+
+# Créer une forme primitive de représentation dynamique du body
+
+options = 0
+wafr_diameter = 0.1
+wafr_thickness = 0.3437/2
+wafr_handle = sim.createPrimitiveShape(sim.primitiveshape_cylinder, [wafr_diameter, wafr_diameter, wafr_thickness], options)
+sim.setObjectOrientation(wafr_handle, [math.radians(0), math.radians(-0.46338811018134884), math.radians(0.7933965215763155)], sim.handle_world)
+sim.setObjectPosition(wafr_handle, [-1.0624862909317017, -1.0949854850769043, 0.66345860958099365], sim.handle_world)
+sim.setObjectAlias(wafr_handle, "wafr_dyn")
+set_object_dyn(wafr_handle)
+sim.computeMassAndInertia(wafr_handle, 1)
+
+
+handle = sim.getObject("/WheelAttachFrontLeft")
+position = sim.getObjectPosition(handle, sim.handle_world)
+print("position", position)
+eulerAngles = sim.getObjectOrientation(handle, sim.handle_world)
+for i in range(3):
+    eulerAngles[i] = math.degrees(eulerAngles[i])
+    print(i, eulerAngles[i])
+bbox = sim.getShapeBB(handle)
+print("bbox", bbox)
+
+# Créer une forme primitive de représentation dynamique du body
+
+options = 0
+wafl_diameter = 0.1
+wafl_thickness = 0.3437/2
+wafl_handle = sim.createPrimitiveShape(sim.primitiveshape_cylinder, [wafl_diameter, wafl_diameter, wafl_thickness], options)
+sim.setObjectOrientation(wafl_handle, [math.radians(0), math.radians(-0.46338811018134884), math.radians(0.7933965215763155)], sim.handle_world)
+sim.setObjectPosition(wafl_handle, [1.0624865293502808, -1.0949794054031372, 0.66424771547317505], sim.handle_world)
+sim.setObjectAlias(wafl_handle, "wafl_dyn")
+set_object_dyn(wafl_handle)
+sim.computeMassAndInertia(wafl_handle, 1)
+
+
+
+
 # Création d'une articulation pivot horizontale : moteur de la roue arrière droite
 
-print("Création d'une articulation pivot horizontale : moteur de la roue avant")
 
 options = 0
 sizes = [0.15, 0.02]
@@ -231,7 +418,6 @@ sim.setObjectPosition(wrr_motor_handle, position, sim.handle_world)
 
 # Création d'une articulation pivot horizontale : moteur de la roue arrière gauche
 
-print("Création d'une articulation pivot horizontale : moteur de la roue avant")
 
 options = 0
 sizes = [0.15, 0.02]
@@ -243,7 +429,6 @@ sim.setObjectPosition(wrl_motor_handle, position, sim.handle_world)
 
 # Création d'une articulation pivot horizontale : moteur de la roue avant droite
 
-print("Création d'une articulation pivot horizontale : moteur de la roue avant")
 
 options = 0
 sizes = [0.15, 0.02]
@@ -255,7 +440,6 @@ sim.setObjectPosition(wfr_motor_handle, position, sim.handle_world)
 
 # Création d'une articulation pivot horizontale : moteur de la roue avant gauche
 
-print("Création d'une articulation pivot horizontale : moteur de la roue avant")
 
 options = 0
 sizes = [0.15, 0.02]
@@ -267,7 +451,6 @@ sim.setObjectPosition(wfl_motor_handle, position, sim.handle_world)
 
 # Création d'une articulation pivot horizontale : moteur de la roue milieu droite
 
-print("Création d'une articulation pivot horizontale : moteur de la roue milieu droite")
 
 options = 0
 sizes = [0.15, 0.02]
@@ -279,7 +462,6 @@ sim.setObjectPosition(wmr_motor_handle, position, sim.handle_world)
 
 # Création d'une articulation pivot horizontale : moteur de la roue milieu gauche
 
-print("Création d'une articulation pivot horizontale : moteur de la roue milieu gauche")
 
 options = 0
 sizes = [0.15, 0.02]
@@ -289,15 +471,177 @@ sim.setObjectOrientation(wml_motor_handle, [0, -math.pi/2.0, 0], wml_motor_handl
 position = sim.getObjectPosition(wml_handle, sim.handle_world)
 sim.setObjectPosition(wml_motor_handle, position, sim.handle_world)
 
+# Création d'une articulation pivot horizontale : pivot de la suspension arrière droite
+
+
+options = 0
+sizes = [0.15, 0.02]
+srr_motor_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
+sim.setObjectAlias(srr_motor_handle, "srr_motor")
+sim.setObjectOrientation(srr_motor_handle, [0, -math.pi/2.0, 0], srr_motor_handle)
+position = sim.getObjectPosition(srr_handle, sim.handle_world)
+position[1] = position[1] - 0.07
+position[2] = position[2] + 0.07
+sim.setObjectPosition(srr_motor_handle, position, sim.handle_world)
+
+# Création d'une articulation pivot horizontale : pivot de la suspension arrière gauche
+
+
+options = 0
+sizes = [0.15, 0.02]
+srl_motor_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
+sim.setObjectAlias(srl_motor_handle, "srl_motor")
+sim.setObjectOrientation(srl_motor_handle, [0, -math.pi/2.0, 0], srl_motor_handle)
+position = sim.getObjectPosition(srl_handle, sim.handle_world)
+position[1] = position[1] - 0.07
+position[2] = position[2] + 0.07
+sim.setObjectPosition(srl_motor_handle, position, sim.handle_world)
+
+# Création d'une articulation pivot horizontale : pivot de la suspension avant droite
+
+
+options = 0
+sizes = [0.15, 0.02]
+sfr_motor_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
+sim.setObjectAlias(sfr_motor_handle, "sfr_motor")
+sim.setObjectOrientation(sfr_motor_handle, [0, -math.pi/2.0, 0], sfr_motor_handle)
+position = sim.getObjectPosition(sfr_handle, sim.handle_world)
+position[1] = position[1] + 0.075
+position[2] = position[2] + 0.125
+sim.setObjectPosition(sfr_motor_handle, position, sim.handle_world)
+
+# Création d'une articulation pivot horizontale : pivot de la suspension avant gauche
+
+
+options = 0
+sizes = [0.15, 0.02]
+sfl_motor_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
+sim.setObjectAlias(sfl_motor_handle, "sfl_motor")
+sim.setObjectOrientation(sfl_motor_handle, [0, -math.pi/2.0, 0], sfl_motor_handle)
+position = sim.getObjectPosition(sfl_handle, sim.handle_world)
+position[1] = position[1] + 0.075
+position[2] = position[2] + 0.125
+sim.setObjectPosition(sfl_motor_handle, position, sim.handle_world)
+
+
+# Création d'une articulation pivot horizontale : pivot2 de la roue arrière droite
+
+
+options = 0
+sizes = [0.15, 0.02]
+warr_motor_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
+sim.setObjectAlias(warr_motor_handle, "warr_motor")
+sim.setObjectOrientation(warr_motor_handle, [0, 0, 0], warr_motor_handle)
+position = sim.getObjectPosition(warr_handle, sim.handle_world)
+sim.setObjectPosition(warr_motor_handle, position, sim.handle_world)
+
+
+# Création d'une articulation pivot horizontale : pivot2 de la roue arrière gauche
+
+
+options = 0
+sizes = [0.15, 0.02]
+walr_motor_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
+sim.setObjectAlias(walr_motor_handle, "walr_motor")
+sim.setObjectOrientation(walr_motor_handle, [0, 0, 0], walr_motor_handle)
+position = sim.getObjectPosition(warl_handle, sim.handle_world)
+sim.setObjectPosition(walr_motor_handle, position, sim.handle_world)
+
+
+# Création d'une articulation pivot horizontale : pivot2 de la roue avant droite
+
+
+options = 0
+sizes = [0.15, 0.02]
+wafr_motor_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
+sim.setObjectAlias(wafr_motor_handle, "wafr_motor")
+sim.setObjectOrientation(wafr_motor_handle, [0, 0, 0], wafr_motor_handle)
+position = sim.getObjectPosition(wafr_handle, sim.handle_world)
+sim.setObjectPosition(wafr_motor_handle, position, sim.handle_world)
+
+
+# Création d'une articulation pivot horizontale : pivot2 de la roue avant gauche
+
+
+options = 0
+sizes = [0.15, 0.02]
+wafl_motor_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
+sim.setObjectAlias(wafl_motor_handle, "wafl_motor")
+sim.setObjectOrientation(wafl_motor_handle, [0, 0, 0], wafl_motor_handle)
+position = sim.getObjectPosition(wafl_handle, sim.handle_world)
+sim.setObjectPosition(wafl_motor_handle, position, sim.handle_world)
+
+
+# Création d'une articulation pivot horizontale : Attache de la roue arrière droite
+
+
+options = 0
+sizes = [0.15, 0.02]
+warr_pivot_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
+sim.setObjectAlias(warr_pivot_handle, "warr_pivot")
+sim.setObjectOrientation(warr_pivot_handle, [0, -math.pi/2.0, 0], warr_pivot_handle)
+position = sim.getObjectPosition(warr_handle, sim.handle_world)
+sim.setObjectPosition(warr_pivot_handle, position, sim.handle_world)
+
+
+# Création d'une articulation pivot horizontale : Attache de la roue arrière gauche
+
+
+options = 0
+sizes = [0.15, 0.02]
+walr_pivot_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
+sim.setObjectAlias(walr_pivot_handle, "walr_pivot")
+sim.setObjectOrientation(walr_pivot_handle, [0, -math.pi/2.0, 0], walr_pivot_handle)
+position = sim.getObjectPosition(warl_handle, sim.handle_world)
+sim.setObjectPosition(walr_pivot_handle, position, sim.handle_world)
+
+
+# Création d'une articulation pivot horizontale : Attache de la roue avant droite
+
+
+options = 0
+sizes = [0.15, 0.02]
+wafr_pivot_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
+sim.setObjectAlias(wafr_pivot_handle, "wafr_pivot")
+sim.setObjectOrientation(wafr_pivot_handle, [0, -math.pi/2.0, 0], wafr_pivot_handle)
+position = sim.getObjectPosition(wafr_handle, sim.handle_world)
+sim.setObjectPosition(wafr_pivot_handle, position, sim.handle_world)
+
+
+# Création d'une articulation pivot horizontale : Attache de la roue avant gauche
+
+
+options = 0
+sizes = [0.15, 0.02]
+wafl_pivot_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
+sim.setObjectAlias(wafl_pivot_handle, "wafl_pivot")
+sim.setObjectOrientation(wafl_pivot_handle, [0, -math.pi/2.0, 0], wafl_pivot_handle)
+position = sim.getObjectPosition(wafl_handle, sim.handle_world)
+sim.setObjectPosition(wafl_pivot_handle, position, sim.handle_world)
+
+
 # Assemblage du robot, création de l’arbre de description
 
 keep_in_place = True
-sim.setObjectParent(wrr_motor_handle, body_handle, keep_in_place)
-sim.setObjectParent(wrl_motor_handle, body_handle, keep_in_place)
-sim.setObjectParent(wfr_motor_handle, body_handle, keep_in_place)
-sim.setObjectParent(wfl_motor_handle, body_handle, keep_in_place)
-sim.setObjectParent(wmr_motor_handle, body_handle, keep_in_place)
-sim.setObjectParent(wml_motor_handle, body_handle, keep_in_place)
+
+sim.setObjectParent(sfr_motor_handle, body_handle, keep_in_place)
+sim.setObjectParent(sfl_motor_handle, body_handle, keep_in_place)
+
+sim.setObjectParent(sfr_handle, sfr_motor_handle, keep_in_place)
+sim.setObjectParent(sfl_handle, sfl_motor_handle, keep_in_place)
+
+sim.setObjectParent(srr_motor_handle, sfr_handle, keep_in_place)
+sim.setObjectParent(srl_motor_handle, sfl_handle, keep_in_place)
+sim.setObjectParent(wfr_motor_handle, sfr_handle, keep_in_place)
+sim.setObjectParent(wfl_motor_handle, sfl_handle, keep_in_place)
+
+sim.setObjectParent(srr_handle, srr_motor_handle, keep_in_place)
+sim.setObjectParent(srl_handle, srl_motor_handle, keep_in_place)
+
+sim.setObjectParent(wrr_motor_handle, srr_handle, keep_in_place)
+sim.setObjectParent(wrl_motor_handle, srl_handle, keep_in_place)
+sim.setObjectParent(wmr_motor_handle, srr_handle, keep_in_place)
+sim.setObjectParent(wml_motor_handle, srl_handle, keep_in_place)
 
 sim.setObjectParent(wrr_handle, wrr_motor_handle, keep_in_place)
 sim.setObjectParent(wrl_handle, wrl_motor_handle, keep_in_place)
@@ -305,6 +649,23 @@ sim.setObjectParent(wfr_handle, wfr_motor_handle, keep_in_place)
 sim.setObjectParent(wfl_handle, wfl_motor_handle, keep_in_place)
 sim.setObjectParent(wmr_handle, wmr_motor_handle, keep_in_place)
 sim.setObjectParent(wml_handle, wml_motor_handle, keep_in_place)
+
+sim.setObjectParent(warr_pivot_handle, srr_handle, keep_in_place)
+sim.setObjectParent(walr_pivot_handle, srl_handle, keep_in_place)
+sim.setObjectParent(wafr_pivot_handle, sfr_handle, keep_in_place)
+sim.setObjectParent(wafl_pivot_handle, sfl_handle, keep_in_place)
+
+sim.setObjectParent(warr_handle, warr_pivot_handle, keep_in_place)
+sim.setObjectParent(warl_handle, walr_pivot_handle, keep_in_place)
+sim.setObjectParent(wafr_handle, wafr_pivot_handle, keep_in_place)
+sim.setObjectParent(wafl_handle, wafl_pivot_handle, keep_in_place)
+
+sim.setObjectParent(warr_motor_handle, warr_handle, keep_in_place)
+sim.setObjectParent(walr_motor_handle, warl_handle, keep_in_place)
+sim.setObjectParent(wafr_motor_handle, wafr_handle, keep_in_place)
+sim.setObjectParent(wafl_motor_handle, wafl_handle, keep_in_place)
+
+
 
 sim.setObjectParent(sim.getObject("/WheelRearRight"), wrr_handle, keep_in_place)
 sim.setObjectParent(sim.getObject("/WheelRearLeft"), wrl_handle, keep_in_place)
@@ -315,15 +676,16 @@ sim.setObjectParent(sim.getObject("/WheelMidLeft"), wml_handle, keep_in_place)
 
 sim.setObjectParent(sim.getObject("/Body"), body_handle, keep_in_place)
 sim.setObjectParent(sim.getObject("/SuspensionTop"), body_handle, keep_in_place)
-sim.setObjectParent(sim.getObject("/SuspensionRearRight"), body_handle, keep_in_place)
-sim.setObjectParent(sim.getObject("/SuspensionRearLeft"), body_handle, keep_in_place)
-sim.setObjectParent(sim.getObject("/SuspensionFrontRight"), body_handle, keep_in_place)
-sim.setObjectParent(sim.getObject("/SuspensionFrontLeft"), body_handle, keep_in_place)
-sim.setObjectParent(sim.getObject("/WheelAttachRearRight"), body_handle, keep_in_place)
-sim.setObjectParent(sim.getObject("/WheelAttachRearLeft"), body_handle, keep_in_place)
-sim.setObjectParent(sim.getObject("/WheelAttachFrontRight"), body_handle, keep_in_place)
-sim.setObjectParent(sim.getObject("/WheelAttachFrontLeft"), body_handle, keep_in_place)
-sim.setObjectParent(sim.getObject("/Body"), body_handle, keep_in_place)
+
+sim.setObjectParent(sim.getObject("/SuspensionRearRight"), srr_handle, keep_in_place)
+sim.setObjectParent(sim.getObject("/SuspensionRearLeft"), srl_handle, keep_in_place)
+sim.setObjectParent(sim.getObject("/SuspensionFrontRight"), sfr_handle, keep_in_place)
+sim.setObjectParent(sim.getObject("/SuspensionFrontLeft"), sfl_handle, keep_in_place)
+
+sim.setObjectParent(sim.getObject("/WheelAttachRearRight"), warr_handle, keep_in_place)
+sim.setObjectParent(sim.getObject("/WheelAttachRearLeft"), warl_handle, keep_in_place)
+sim.setObjectParent(sim.getObject("/WheelAttachFrontRight"), wafr_handle, keep_in_place)
+sim.setObjectParent(sim.getObject("/WheelAttachFrontLeft"), wafl_handle, keep_in_place)
 
 # Rendre des objets invisibles
 
@@ -342,4 +704,14 @@ sim.setObjectInt32Param(wfr_motor_handle,sim.objintparam_visibility_layer,0)
 sim.setObjectInt32Param(wfl_motor_handle,sim.objintparam_visibility_layer,0)
 sim.setObjectInt32Param(wmr_motor_handle,sim.objintparam_visibility_layer,0)
 sim.setObjectInt32Param(wml_motor_handle,sim.objintparam_visibility_layer,0)
+
+sim.setObjectInt32Param(srr_handle,sim.objintparam_visibility_layer,0)
+sim.setObjectInt32Param(srl_handle,sim.objintparam_visibility_layer,0)
+sim.setObjectInt32Param(sfr_handle,sim.objintparam_visibility_layer,0)
+sim.setObjectInt32Param(sfl_handle,sim.objintparam_visibility_layer,0)
+
+sim.setObjectInt32Param(srr_motor_handle,sim.objintparam_visibility_layer,0)
+sim.setObjectInt32Param(srl_motor_handle,sim.objintparam_visibility_layer,0)
+sim.setObjectInt32Param(sfr_motor_handle,sim.objintparam_visibility_layer,0)
+sim.setObjectInt32Param(sfl_motor_handle,sim.objintparam_visibility_layer,0)
 
