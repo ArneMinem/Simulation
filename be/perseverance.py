@@ -70,7 +70,7 @@ sim.setObjectOrientation(body_handle, [math.radians(90), 0, -math.radians(90)], 
 sim.setObjectPosition(body_handle, [-0.06710752844810486, -0.3080650568008423, 1.4252123832702637], sim.handle_world)
 sim.setObjectAlias(body_handle, "body_dyn")
 set_object_dyn(body_handle)
-sim.computeMassAndInertia(body_handle, 1)
+sim.computeMassAndInertia(body_handle, 0.0001)
 
 print("Forme primitive pour wheels")
 
@@ -94,7 +94,7 @@ sim.setObjectOrientation(wrr_handle, [math.radians(23.746522210072314), math.rad
 sim.setObjectPosition(wrr_handle, [-1.0624862909317017, 1.164980173110962, 0.27345884799957275], sim.handle_world)
 sim.setObjectAlias(wrr_handle, "wrr_dyn")
 set_object_dyn(wrr_handle)
-sim.computeMassAndInertia(wrr_handle, 1)
+sim.computeMassAndInertia(wrr_handle, 0.0001)
 
 
 
@@ -118,7 +118,7 @@ sim.setObjectOrientation(wrl_handle, [math.radians(45.25791834482287), math.radi
 sim.setObjectPosition(wrl_handle, [1.0624865293502808, 1.164986491203308, 0.27424795389175415], sim.handle_world)
 sim.setObjectAlias(wrl_handle, "wrl_dyn")
 set_object_dyn(wrl_handle)
-sim.computeMassAndInertia(wrl_handle, 1)
+sim.computeMassAndInertia(wrl_handle, 0.0001)
 
 
 
@@ -142,7 +142,7 @@ sim.setObjectOrientation(wfr_handle, [math.radians(23.746522210072314), math.rad
 sim.setObjectPosition(wfr_handle, [-1.0624862909317017, -1.0949854850769043, 0.26345860958099365], sim.handle_world)
 sim.setObjectAlias(wfr_handle, "wfr_dyn")
 set_object_dyn(wfr_handle)
-sim.computeMassAndInertia(wfr_handle, 1)
+sim.computeMassAndInertia(wfr_handle, 0.0001)
 
 
 
@@ -166,7 +166,7 @@ sim.setObjectOrientation(wfl_handle, [math.radians(23.746522210072314), math.rad
 sim.setObjectPosition(wfl_handle, [1.0624865293502808, -1.0949794054031372, 0.26424771547317505], sim.handle_world)
 sim.setObjectAlias(wfl_handle, "wfl_dyn")
 set_object_dyn(wfl_handle)
-sim.computeMassAndInertia(wfl_handle, 1)
+sim.computeMassAndInertia(wfl_handle, 0.0001)
 
 
 
@@ -190,7 +190,7 @@ sim.setObjectOrientation(wmr_handle, [math.radians(23.746522210072314), math.rad
 sim.setObjectPosition(wmr_handle, [-1.184484839439392, 0.09000296890735626, 0.2638533115386963], sim.handle_world)
 sim.setObjectAlias(wmr_handle, "wmr_dyn")
 set_object_dyn(wmr_handle)
-sim.computeMassAndInertia(wmr_handle, 1)
+sim.computeMassAndInertia(wmr_handle, 0.0001)
 
 
 
@@ -214,7 +214,7 @@ sim.setObjectOrientation(wml_handle, [math.radians(23.746522210072314), math.rad
 sim.setObjectPosition(wml_handle, [1.184484839439392, 0.09000296890735626, 0.2638533115386963], sim.handle_world)
 sim.setObjectAlias(wml_handle, "wml_dyn")
 set_object_dyn(wml_handle)
-sim.computeMassAndInertia(wml_handle, 1)
+sim.computeMassAndInertia(wml_handle, 0.0001)
 
 
 
@@ -238,7 +238,7 @@ sim.setObjectOrientation(srr_handle, [math.radians(112.67314680986536), math.rad
 sim.setObjectPosition(srr_handle, [-0.9769465923309326, 0.6021621823310852, 0.596157431602478], sim.handle_world)
 sim.setObjectAlias(srr_handle, "srr_dyn")
 set_object_dyn(srr_handle)
-sim.computeMassAndInertia(srr_handle, 1)
+sim.computeMassAndInertia(srr_handle, 0.0001)
 
 
 
@@ -262,7 +262,7 @@ sim.setObjectOrientation(srl_handle, [math.radians(112.67314680986536), math.rad
 sim.setObjectPosition(srl_handle, [0.9769465923309326, 0.6021621823310852, 0.596157431602478], sim.handle_world)
 sim.setObjectAlias(srl_handle, "srl_dyn")
 set_object_dyn(srl_handle)
-sim.computeMassAndInertia(srl_handle, 1)
+sim.computeMassAndInertia(srl_handle, 0.0001)
 
 
 handle = sim.getObject("/SuspensionFrontRight")
@@ -285,7 +285,7 @@ sim.setObjectOrientation(sfr_handle, [math.radians(-92.39560379813177), math.rad
 sim.setObjectPosition(sfr_handle, [-0.8669474720954895, -0.2909966707229614, 0.802253782749176], sim.handle_world)
 sim.setObjectAlias(sfr_handle, "sfr_dyn")
 set_object_dyn(sfr_handle)
-sim.computeMassAndInertia(sfr_handle, 1)
+sim.computeMassAndInertia(sfr_handle, 0.0001)
 
 
 handle = sim.getObject("/SuspensionFrontLeft")
@@ -308,7 +308,7 @@ sim.setObjectOrientation(sfl_handle, [math.radians(87.60438482676204), math.radi
 sim.setObjectPosition(sfl_handle, [0.8669472932815552, -0.2909965515136719, 0.802253782749176], sim.handle_world)
 sim.setObjectAlias(sfl_handle, "sfl_dyn")
 set_object_dyn(sfl_handle)
-sim.computeMassAndInertia(sfl_handle, 1)
+sim.computeMassAndInertia(sfl_handle, 0.0001)
 
 
 handle = sim.getObject("/WheelAttachRearRight")
@@ -331,7 +331,7 @@ sim.setObjectOrientation(warr_handle, [math.radians(0), math.radians(-0.46338811
 sim.setObjectPosition(warr_handle, [-1.0624862909317017, 1.164980173110962, 0.67345884799957275], sim.handle_world)
 sim.setObjectAlias(warr_handle, "warr_dyn")
 set_object_dyn(warr_handle)
-sim.computeMassAndInertia(warr_handle, 1)
+sim.computeMassAndInertia(warr_handle, 0.0001)
 
 
 handle = sim.getObject("/WheelAttachRearLeft")
@@ -354,7 +354,7 @@ sim.setObjectOrientation(warl_handle, [math.radians(0), math.radians(-0.46338811
 sim.setObjectPosition(warl_handle, [1.0624865293502808, 1.164986491203308, 0.67345860958099365], sim.handle_world)
 sim.setObjectAlias(warl_handle, "walr_dyn")
 set_object_dyn(warl_handle)
-sim.computeMassAndInertia(warl_handle, 1)
+sim.computeMassAndInertia(warl_handle, 0.0001)
 
 
 handle = sim.getObject("/WheelAttachFrontRight")
@@ -377,7 +377,7 @@ sim.setObjectOrientation(wafr_handle, [math.radians(0), math.radians(-0.46338811
 sim.setObjectPosition(wafr_handle, [-1.0624862909317017, -1.0949854850769043, 0.66345860958099365], sim.handle_world)
 sim.setObjectAlias(wafr_handle, "wafr_dyn")
 set_object_dyn(wafr_handle)
-sim.computeMassAndInertia(wafr_handle, 1)
+sim.computeMassAndInertia(wafr_handle, 0.0001)
 
 
 handle = sim.getObject("/WheelAttachFrontLeft")
@@ -400,7 +400,7 @@ sim.setObjectOrientation(wafl_handle, [math.radians(0), math.radians(-0.46338811
 sim.setObjectPosition(wafl_handle, [1.0624865293502808, -1.0949794054031372, 0.66424771547317505], sim.handle_world)
 sim.setObjectAlias(wafl_handle, "wafl_dyn")
 set_object_dyn(wafl_handle)
-sim.computeMassAndInertia(wafl_handle, 1)
+sim.computeMassAndInertia(wafl_handle, 0.0001)
 
 
 
@@ -541,11 +541,11 @@ sim.setObjectPosition(warr_motor_handle, position, sim.handle_world)
 
 options = 0
 sizes = [0.15, 0.02]
-walr_motor_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
-sim.setObjectAlias(walr_motor_handle, "walr_motor")
-sim.setObjectOrientation(walr_motor_handle, [0, 0, 0], walr_motor_handle)
+warl_motor_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
+sim.setObjectAlias(warl_motor_handle, "walr_motor")
+sim.setObjectOrientation(warl_motor_handle, [0, 0, 0], warl_motor_handle)
 position = sim.getObjectPosition(warl_handle, sim.handle_world)
-sim.setObjectPosition(walr_motor_handle, position, sim.handle_world)
+sim.setObjectPosition(warl_motor_handle, position, sim.handle_world)
 
 
 # Création d'une articulation pivot horizontale : pivot2 de la roue avant droite
@@ -572,53 +572,6 @@ position = sim.getObjectPosition(wafl_handle, sim.handle_world)
 sim.setObjectPosition(wafl_motor_handle, position, sim.handle_world)
 
 
-# Création d'une articulation pivot horizontale : Attache de la roue arrière droite
-
-
-options = 0
-sizes = [0.15, 0.02]
-warr_pivot_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
-sim.setObjectAlias(warr_pivot_handle, "warr_pivot")
-sim.setObjectOrientation(warr_pivot_handle, [0, -math.pi/2.0, 0], warr_pivot_handle)
-position = sim.getObjectPosition(warr_handle, sim.handle_world)
-sim.setObjectPosition(warr_pivot_handle, position, sim.handle_world)
-
-
-# Création d'une articulation pivot horizontale : Attache de la roue arrière gauche
-
-
-options = 0
-sizes = [0.15, 0.02]
-walr_pivot_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
-sim.setObjectAlias(walr_pivot_handle, "walr_pivot")
-sim.setObjectOrientation(walr_pivot_handle, [0, -math.pi/2.0, 0], walr_pivot_handle)
-position = sim.getObjectPosition(warl_handle, sim.handle_world)
-sim.setObjectPosition(walr_pivot_handle, position, sim.handle_world)
-
-
-# Création d'une articulation pivot horizontale : Attache de la roue avant droite
-
-
-options = 0
-sizes = [0.15, 0.02]
-wafr_pivot_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
-sim.setObjectAlias(wafr_pivot_handle, "wafr_pivot")
-sim.setObjectOrientation(wafr_pivot_handle, [0, -math.pi/2.0, 0], wafr_pivot_handle)
-position = sim.getObjectPosition(wafr_handle, sim.handle_world)
-sim.setObjectPosition(wafr_pivot_handle, position, sim.handle_world)
-
-
-# Création d'une articulation pivot horizontale : Attache de la roue avant gauche
-
-
-options = 0
-sizes = [0.15, 0.02]
-wafl_pivot_handle = sim.createJoint(sim.joint_revolute_subtype, sim.jointmode_dynamic, options, sizes)
-sim.setObjectAlias(wafl_pivot_handle, "wafl_pivot")
-sim.setObjectOrientation(wafl_pivot_handle, [0, -math.pi/2.0, 0], wafl_pivot_handle)
-position = sim.getObjectPosition(wafl_handle, sim.handle_world)
-sim.setObjectPosition(wafl_pivot_handle, position, sim.handle_world)
-
 
 # Assemblage du robot, création de l’arbre de description
 
@@ -632,14 +585,10 @@ sim.setObjectParent(sfl_handle, sfl_motor_handle, keep_in_place)
 
 sim.setObjectParent(srr_motor_handle, sfr_handle, keep_in_place)
 sim.setObjectParent(srl_motor_handle, sfl_handle, keep_in_place)
-sim.setObjectParent(wfr_motor_handle, sfr_handle, keep_in_place)
-sim.setObjectParent(wfl_motor_handle, sfl_handle, keep_in_place)
 
 sim.setObjectParent(srr_handle, srr_motor_handle, keep_in_place)
 sim.setObjectParent(srl_handle, srl_motor_handle, keep_in_place)
 
-sim.setObjectParent(wrr_motor_handle, srr_handle, keep_in_place)
-sim.setObjectParent(wrl_motor_handle, srl_handle, keep_in_place)
 sim.setObjectParent(wmr_motor_handle, srr_handle, keep_in_place)
 sim.setObjectParent(wml_motor_handle, srl_handle, keep_in_place)
 
@@ -650,22 +599,21 @@ sim.setObjectParent(wfl_handle, wfl_motor_handle, keep_in_place)
 sim.setObjectParent(wmr_handle, wmr_motor_handle, keep_in_place)
 sim.setObjectParent(wml_handle, wml_motor_handle, keep_in_place)
 
-sim.setObjectParent(warr_pivot_handle, srr_handle, keep_in_place)
-sim.setObjectParent(walr_pivot_handle, srl_handle, keep_in_place)
-sim.setObjectParent(wafr_pivot_handle, sfr_handle, keep_in_place)
-sim.setObjectParent(wafl_pivot_handle, sfl_handle, keep_in_place)
+sim.setObjectParent(warr_motor_handle, srr_handle, keep_in_place)
+sim.setObjectParent(warl_motor_handle, srl_handle, keep_in_place)
+sim.setObjectParent(wafr_motor_handle, sfr_handle, keep_in_place)
+sim.setObjectParent(wafl_motor_handle, sfl_handle, keep_in_place)
 
-sim.setObjectParent(warr_handle, warr_pivot_handle, keep_in_place)
-sim.setObjectParent(warl_handle, walr_pivot_handle, keep_in_place)
-sim.setObjectParent(wafr_handle, wafr_pivot_handle, keep_in_place)
-sim.setObjectParent(wafl_handle, wafl_pivot_handle, keep_in_place)
+sim.setObjectParent(warr_handle, warr_motor_handle, keep_in_place)
+sim.setObjectParent(warl_handle, warl_motor_handle, keep_in_place)
+sim.setObjectParent(wafr_handle, wafr_motor_handle, keep_in_place)
+sim.setObjectParent(wafl_handle, wafl_motor_handle, keep_in_place)
 
-sim.setObjectParent(warr_motor_handle, warr_handle, keep_in_place)
-sim.setObjectParent(walr_motor_handle, warl_handle, keep_in_place)
-sim.setObjectParent(wafr_motor_handle, wafr_handle, keep_in_place)
-sim.setObjectParent(wafl_motor_handle, wafl_handle, keep_in_place)
+sim.setObjectParent(wrr_motor_handle, warr_handle, keep_in_place)
+sim.setObjectParent(wrl_motor_handle, warl_handle, keep_in_place)
 
-
+sim.setObjectParent(wfr_motor_handle, wafr_handle, keep_in_place)
+sim.setObjectParent(wfl_motor_handle, wafl_handle, keep_in_place)
 
 sim.setObjectParent(sim.getObject("/WheelRearRight"), wrr_handle, keep_in_place)
 sim.setObjectParent(sim.getObject("/WheelRearLeft"), wrl_handle, keep_in_place)
@@ -714,4 +662,15 @@ sim.setObjectInt32Param(srr_motor_handle,sim.objintparam_visibility_layer,0)
 sim.setObjectInt32Param(srl_motor_handle,sim.objintparam_visibility_layer,0)
 sim.setObjectInt32Param(sfr_motor_handle,sim.objintparam_visibility_layer,0)
 sim.setObjectInt32Param(sfl_motor_handle,sim.objintparam_visibility_layer,0)
+
+sim.setObjectInt32Param(warr_handle,sim.objintparam_visibility_layer,0)
+sim.setObjectInt32Param(warl_handle,sim.objintparam_visibility_layer,0)
+sim.setObjectInt32Param(wafr_handle,sim.objintparam_visibility_layer,0)
+sim.setObjectInt32Param(wafl_handle,sim.objintparam_visibility_layer,0)
+
+sim.setObjectInt32Param(warr_motor_handle,sim.objintparam_visibility_layer,0)
+sim.setObjectInt32Param(warl_motor_handle,sim.objintparam_visibility_layer,0)
+sim.setObjectInt32Param(wafr_motor_handle,sim.objintparam_visibility_layer,0)
+sim.setObjectInt32Param(wafl_motor_handle,sim.objintparam_visibility_layer,0)
+
 

@@ -84,7 +84,4 @@ sim.setJointTargetVelocity(motor_right_rear, 0, motion_params)
 
 
 
-
-
-
 sim.stopSimulation()
